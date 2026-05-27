@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #F7F6F2;
+  color: #1A1A2E;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif { font-family: 'DM Serif Display', Georgia, serif; }
+.font-mono  { font-family: 'JetBrains Mono', monospace; }
+
+/* Nav link underline */
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: #2ECC9A;
+  transition: width 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Service card accent line */
+.service-card { position: relative; overflow: hidden; }
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 0;
+  background: #2ECC9A;
+  transition: height 0.35s ease;
+}
+.service-card:hover::before { height: 100%; }
+.service-card:hover { background: #FAFAF8 !important; }
+
+/* Fade up animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up   { animation: fadeUp 0.7s ease both; }
+.fade-up-1 { animation: fadeUp 0.7s 0.1s ease both; }
+.fade-up-2 { animation: fadeUp 0.7s 0.22s ease both; }
+.fade-up-3 { animation: fadeUp 0.7s 0.36s ease both; }
+
+/* Live pulse dot */
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.pulse { animation: pulse 2.5s ease-in-out infinite; }
+
+/* Terminal cursor */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.blink { animation: blink 1s step-end infinite; }
+
+/* Section label line */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: #2ECC9A;
+  flex-shrink: 0;
+}
