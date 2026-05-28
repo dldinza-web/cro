@@ -13,10 +13,12 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { href: '#services', label: 'Services' },
-    { href: '#process',  label: 'Process'  },
-    { href: '#about',    label: 'About'    },
-    { href: '#contact',  label: 'Contact'  },
+    { href: '#services',    label: 'Services'   },
+    { href: '#process',     label: 'Process'    },
+    { href: '#about',       label: 'About'      },
+    { href: '/case-study',  label: 'Case Study' },
+    { href: '/onboarding',  label: 'Onboarding' },
+    { href: '#contact',     label: 'Contact'    },
   ]
 
   return (
